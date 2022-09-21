@@ -2,6 +2,8 @@ public class ApexLegends {
     public static void main(String[] args) throws InterruptedException{
         TestWraith();
         TestHorizon();
+        TestWattson();
+        TestMirage();
     }
     private static void TestWraith(){
         Screen screen = new Screen();
@@ -55,5 +57,54 @@ public class ApexLegends {
             }
         });
         abilitiesHorizon.start();
+    }
+    private static void TestWattson() throws InterruptedException{
+         Screen screen = new Screen();
+         Wattson wattson = new Wattson(
+                 "Natalie Paquette",
+                 "Solace",
+                 22
+         );
+         Thread abilitiesWattson = new Thread(new Runnable() {
+             @Override
+             public void run() {
+                 try{
+                     wattson.perimeterSecurity(screen);
+                     Thread.sleep(1500);
+                     wattson.interceptionPylon(screen);
+                     Thread.sleep(2000);
+                     wattson.sparkOfGenius(screen);
+                     Thread.sleep(2500);
+                 }catch (InterruptedException ie){
+                     ie.printStackTrace();
+                 }
+
+             }
+         });
+         abilitiesWattson.start();
+    }
+    private static void TestMirage() throws InterruptedException{
+        Screen screen = new Screen();
+        Mirage mirage = new Mirage(
+                "Elliot Witt",
+                "Solace",
+                30
+        );
+        Thread abilitiesMirage = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    mirage.nowYouSeeMe(screen);
+                    Thread.sleep(500);
+                    mirage.lifeOfTheParty(screen);
+                    Thread.sleep(1000);
+                    mirage.psycheOut(screen);
+                    Thread.sleep(1500);
+                }catch (InterruptedException ie){
+                    ie.printStackTrace();
+                }
+            }
+        });
+        abilitiesMirage.start();
     }
 }
