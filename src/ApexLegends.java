@@ -71,8 +71,10 @@ public class ApexLegends {
                  try{
                      wattson.perimeterSecurity(screen);
                      Thread.sleep(1500);
+
                      wattson.interceptionPylon(screen);
                      Thread.sleep(2000);
+
                      wattson.sparkOfGenius(screen);
                      Thread.sleep(2500);
                  }catch (InterruptedException ie){
@@ -96,8 +98,10 @@ public class ApexLegends {
                 try{
                     mirage.nowYouSeeMe(screen);
                     Thread.sleep(500);
+
                     mirage.lifeOfTheParty(screen);
                     Thread.sleep(1000);
+
                     mirage.psycheOut(screen);
                     Thread.sleep(1500);
                 }catch (InterruptedException ie){
@@ -106,5 +110,55 @@ public class ApexLegends {
             }
         });
         abilitiesMirage.start();
+    }
+    private static void testBangalore() throws InterruptedException{
+        Screen screen = new Screen();
+        Bangalore bangalore = new Bangalore(
+                "Anita Williams",
+                "Gridiron",
+                38
+        );
+        Thread abilitiesBangalore = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    bangalore.doubleTime(screen);
+                    Thread.sleep(300);
+
+                    bangalore.smokeLauncher(screen);
+                    Thread.sleep(600);
+
+                    bangalore.rollingThunder(screen);
+                    Thread.sleep(900);
+                }catch (InterruptedException ie){
+                    ie.printStackTrace();
+                }
+            }
+        });
+    }
+    private static void testCaustic() throws InterruptedException{
+        Screen screen = new Screen();
+        Caustic caustic = new Caustic(
+                "Alexander Nox",
+                "Gaea",
+                48
+        );
+        Thread abilitiesCaustic = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    caustic.noxGasTrap(screen);
+                    Thread.sleep(1000);
+
+                    caustic.noxVision(screen);
+                    Thread.sleep(2000);
+
+                    caustic.noxGasGrenade(screen);
+                    Thread.sleep(3000);
+                }catch (InterruptedException ie){
+                    ie.printStackTrace();
+                }
+            }
+        });
     }
 }
